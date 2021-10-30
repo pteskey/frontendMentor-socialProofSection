@@ -34,3 +34,151 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+// Variables
+
+$magenta: hsl(300, 43%, 22%);
+$pink: hsl(333, 80%, 67%);
+$darkGrayMagenta: hsl(303, 10%, 53%);
+$lightGrayMagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+// Font Import
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+
+// Main CSS
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Spartan', sans-serif; 
+  
+}
+.background__top {
+  position: absolute;
+  height: 232px;
+  width: 374px;
+  background-image: url('../images/bg-pattern-top-mobile.svg');
+  background-size: cover;
+  top: -80px;
+}
+.main__textbox {
+  margin: auto;
+  margin-top: 80px;
+  width: 327px;
+  text-align: center;
+  h1 {
+    font-size: 32px;
+    font-weight: 700;    
+    line-height: 100%;  
+    letter-spacing: -1.14px;
+    color: $magenta; 
+     
+  }
+  p {
+    color: $darkGrayMagenta;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    line-height: 25px;
+    margin-top: 18px;
+  }
+}
+
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  row-gap: 16px;
+  margin-top: 40px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  row-gap: 16px;
+  width: 327px;
+  height: 78px;  
+  background-color: $lightGrayMagenta;
+  border-radius: 8px;
+}
+
+.stars {
+  height: 16px;
+}
+
+.rating__text {
+  font-size: 13px;
+  font-weight: 700;
+  color: $magenta;
+}
+
+.testimonial__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+  margin-top: 49px;
+  margin-bottom: 99px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 327px;
+  height: 248px;
+  background-color: $magenta;
+  border-radius: 8px;  
+  &__profile {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    margin-left: 32px;
+  }
+  &__profilepic {
+    height: 100%;
+    border-radius: 50%;
+  }
+  &__profiletext {
+    font-size: 13px;
+    margin-left: 23px;
+  }
+  &__profilename {
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 5px;
+  }
+  &__profileverified {
+    color: $pink;
+  }
+  &__statement {
+    width: 263px;    
+    font-size: 13px;
+    letter-spacing: -0.23px;
+    line-height: 22px;
+    font-weight: 500;
+    color: $white;
+    margin-top: 26px;
+    margin-left: 32px;
+  }
+}
+
+.background__bottom {
+  position: absolute;
+  @media (max-width: 375px) {
+  bottom: -99px;  
+  background-image: url('../images/bg-pattern-bottom-mobile.svg');
+  background-size: cover;
+  height: 503px;
+  width: 375px;
+  }
+  
+}
+
+// Attribution
+
