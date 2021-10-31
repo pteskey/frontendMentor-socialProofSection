@@ -53,30 +53,52 @@ $white: hsl(0, 0%, 100%);
 body {
   position: relative;
   overflow-x: hidden;
-  font-family: 'Spartan', sans-serif; 
-  
+  font-family: 'Spartan', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
 }
+
 .background__top {
   position: absolute;
+  z-index: -1;
   height: 232px;
   width: 374px;
   background-image: url('../images/bg-pattern-top-mobile.svg');
   background-size: cover;
-  top: -80px;
+  left: 0;
+  @media (min-width: 1200px) {
+    background-image: url('../images/bg-pattern-top-desktop.svg');
+    height: 362px;
+    width: 584px;
+    left: 0;
+  }
 }
-.main__textbox {
-  margin: auto;
+
+.main {
   margin-top: 80px;
+  @media (min-width: 1200px) {
+    width: 1110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 72px;
+    margin-top: 127px;
+  }
+}
+
+.main__textbox {    
   width: 327px;
   text-align: center;
+
   h1 {
     font-size: 32px;
-    font-weight: 700;    
-    line-height: 100%;  
+    font-weight: 700;
+    line-height: 100%;
     letter-spacing: -1.14px;
-    color: $magenta; 
-     
+    color: $magenta;
   }
+
   p {
     color: $darkGrayMagenta;
     font-size: 15px;
@@ -84,30 +106,71 @@ body {
     line-height: 25px;
     margin-top: 18px;
   }
+
+  @media (min-width: 1200px) {
+    width: 445px;
+    text-align: left;
+
+    h1 {
+      font-size: 48px;
+      letter-spacing: -1.71px;
+    }
+  }
 }
 
 .reviews__container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   row-gap: 16px;
   margin-top: 40px;
+
+  @media (min-width: 1200px) {
+    margin-top: 0px;
+    width: 540px;
+  }
 }
+
 
 .rating {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   row-gap: 16px;
   width: 327px;
-  height: 78px;  
+  height: 78px;
   background-color: $lightGrayMagenta;
   border-radius: 8px;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 445px;
+    height: 56px;
+
+    &:nth-child(1) {
+      align-self: flex-start;
+    }
+
+    &:nth-child(2) {
+      align-self: center;
+    }
+
+    &:nth-child(3) {
+      align-self: flex-end;
+    }
+  }
 }
+
 
 .stars {
   height: 16px;
+
+  @media (min-width: 1200px) {
+    margin: 0 32px;
+  }
 }
 
 .rating__text {
@@ -124,6 +187,13 @@ body {
   row-gap: 16px;
   margin-top: 49px;
   margin-bottom: 99px;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    column-gap: 30px;
+    width: 1110px;
+    height: 266px;
+    margin-top: 0px;
+  }
 }
 
 .testimonial {
@@ -133,31 +203,52 @@ body {
   width: 327px;
   height: 248px;
   background-color: $magenta;
-  border-radius: 8px;  
+  border-radius: 8px;
+  @media (min-width: 1200px) {
+    width: 350px;
+    height: 234px;
+    &:nth-child(1) {
+      align-self: flex-start;
+    }
+
+    &:nth-child(2) {
+      align-self: center;
+    }
+
+    &:nth-child(3) {
+      align-self: flex-end;
+    }
+  }
+
   &__profile {
     display: flex;
     height: 40px;
     align-items: center;
     margin-left: 32px;
   }
+
   &__profilepic {
     height: 100%;
     border-radius: 50%;
   }
+
   &__profiletext {
     font-size: 13px;
     margin-left: 23px;
   }
+
   &__profilename {
     font-weight: 700;
     color: $white;
     margin-bottom: 5px;
   }
+
   &__profileverified {
     color: $pink;
   }
+
   &__statement {
-    width: 263px;    
+    width: 263px;
     font-size: 13px;
     letter-spacing: -0.23px;
     line-height: 22px;
@@ -170,15 +261,20 @@ body {
 
 .background__bottom {
   position: absolute;
-  @media (max-width: 375px) {
-  bottom: -99px;  
-  background-image: url('../images/bg-pattern-bottom-mobile.svg');
+  z-index: -1;
+  background-image: url('../images/bg-pattern-bottom-desktop.svg');
   background-size: cover;
-  height: 503px;
-  width: 375px;
+  width: 1085px;
+  height: 673px;
+  bottom: 0;
+  right: 0;
+
+  @media (max-width: 375px) {
+    bottom: -99px;
+    background-image: url('../images/bg-pattern-bottom-mobile.svg');
+    background-size: cover;
+    height: 503px;
+    width: 375px;
   }
-  
+
 }
-
-// Attribution
-
